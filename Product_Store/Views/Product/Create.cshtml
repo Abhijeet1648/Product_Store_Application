@@ -1,0 +1,41 @@
+﻿@model Product;
+
+<form method="post">
+    <div class="border p-3 mb-4">
+        <div class="row pb-3">
+            <h4> Product </h4>
+        </div>
+        <hr />
+
+        <div class="row mb-3 p-4">
+            <label asp-for="Name">Name Of Product</label>
+            <input asp-for="Name" class="form-control" />
+            <span></span>
+        </div>
+        <div class="row mb-3 p-4">
+            <label asp-for="DisplayOrder">Quantity</label>
+           
+            <input asp-for="DisplayOrder" class="form-control" id="orderValue" value=0 />
+            <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+        </div>
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-info" onclick={submitted()}>Create</button>
+
+           
+
+            @*<button type="submit">Create</button>*@
+            @*<a class="btn btn-primary text-center">Create</a>*@
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center">
+    <a class="btn btn-primary" asp-action="Index" asp-controller="Product">Back To List</a>
+    </div>
+</form>
+
+ <script>
+     function submitted()
+     {
+        alert('Product added successfully !');
+     }
+ </script>   
